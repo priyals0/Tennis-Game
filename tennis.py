@@ -160,8 +160,8 @@ def firework3():
             move()
         t.clear()
 
-#functions for when a player wins
-def celebrationR():
+#function for when a player wins
+def celebration(num):
     x.hideturtle()
     y.hideturtle()
     z.hideturtle()
@@ -176,25 +176,10 @@ def celebrationR():
     win.setup(width=1000, height=600)
     sketch.clear()
     sketch.goto(0, 0)
-    sketch.write(playerR + " wins!!!", align="center", font=("Garamond", 50, "normal"))
-    firework3()
-
-def celebrationL():
-    x.hideturtle()
-    y.hideturtle()
-    z.hideturtle()
-    a.hideturtle()
-    b.hideturtle()
-    left_pad.hideturtle()
-    right_pad.hideturtle()
-    hit_ball.hideturtle()
-    win = turtle.Screen()
-    win.title("Win Screen")
-    win.bgcolor("thistle")
-    win.setup(width=1000, height=600)
-    sketch.clear()
-    sketch.goto(0, 0)
-    sketch.write(playerL + " wins!!!", align="center", font=("Garamond", 50, "normal"))
+    if(num==1):
+        sketch.write(playerR + " wins!!!", align="center", font=("Garamond", 50, "normal"))
+    else:
+         sketch.write(playerL + " wins!!!", align="center", font=("Garamond", 50, "normal"))
     firework3()
 
 #making the game run!  
@@ -213,7 +198,7 @@ while True:
             hit_ball.sety(-280)
             hit_ball.dy *= -1
             
-    #if left gets it, with cases for diff score
+    #if right misses it, with cases for diff score
     if hit_ball.xcor() > 500:
         hit_ball.goto(0, 0)
         hit_ball.dy *= -1
@@ -228,15 +213,15 @@ while True:
         elif(right_player == 'AD' and left_player == 40):
             right_player = 40
         elif(left_player == 40 and right_player != 40):
-            celebrationL()
+            celebration(2)
             break
         elif(left_player == 'AD'):
-            celebrationL()
+            celebration(2)
             break
         sketch.clear()
         sketch.write(playerL + ": " + str(left_player) + " " + playerR + ": " + str(right_player), align="center", font=("Garamond", 24, "normal"))
 
-    #if right gets it, with cases for diff score
+    #if left misses it, with cases for diff score
     if hit_ball.xcor() < -500:
         hit_ball.goto(0, 0)
         hit_ball.dy *= -1
@@ -251,10 +236,10 @@ while True:
         elif(left_player == 'AD' and right_player == 40):
             left_player = 40
         elif(right_player == 40 and left_player != 40):
-            celebrationR()
+            celebration(1)
             break
         elif(right_player == 'AD'):
-            celebrationR()
+            celebration(1)
             break
         sketch.clear()
         sketch.write(playerL + ": " + str(left_player) + " "  + playerR + ": " + str(right_player), align="center", font=("Garamond", 24, "normal"))
