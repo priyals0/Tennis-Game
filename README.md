@@ -1,5 +1,5 @@
 # Tennis-Game
-A basic game that replicates a game in tennis! The scoring is based on tennis scoring and the players' names will be actual tennis players. 
+A basic game that replicates a game in tennis! The scoring is based on tennis scoring and the players' names will be actual tennis players. With audio now!
 
 For left player: w is up and s is down
 
