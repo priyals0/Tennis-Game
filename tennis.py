@@ -4,7 +4,7 @@ import random
 from playsound import playsound
 
 #this is to generate random tennis player names for the left and right players 
-players = ["Medvedev", "Nadal", "Alcaraz", "Shelton", "Ruud", "Norrie", "Hurkacz", "Rublev", "Fritz", "Kyrgios", "Kokkinakis", "Tiafoe", "Swiatek", "Sakkari", "Jabeur", "Sabalenka", "Pegula", "Fernandez", "Sinner", "Gauff", "Nakashima", "Keys"]
+players = ["Medvedev", "Tashjian", "Marfeo", "Nadal", "Alcaraz", "Shelton", "Ruud", "Norrie", "Hurkacz", "Rublev", "Fritz", "Kyrgios", "Kokkinakis", "Tiafoe", "Swiatek", "Sakkari", "Jabeur", "Sabalenka", "Pegula", "Fernandez", "Sinner", "Gauff", "Nakashima", "Keys"]
 playerL = players[random.randint(0, len(players)-1)]
 playerR = players[random.randint(0, len(players)-1)]
 
@@ -45,6 +45,20 @@ a.shape("square")
 a.shapesize(stretch_wid=5, stretch_len=40)
 a.penup()
 a.goto(0,-150)
+c = turtle.Turtle()
+c.speed(0)
+c.color("white", "medium sea green")
+c.shape("square")
+c.shapesize(stretch_wid=5, stretch_len=10)
+c.penup()
+c.goto(100,50)
+d = turtle.Turtle()
+d.speed(0)
+d.color("white", "medium sea green")
+d.shape("square")
+d.shapesize(stretch_wid=5, stretch_len=10)
+d.penup()
+d.goto(-100,50)
 b = turtle.Turtle()
 b.speed(0)
 b.color("white")
@@ -168,6 +182,8 @@ def celebration(num):
     z.hideturtle()
     a.hideturtle()
     b.hideturtle()
+    c.hideturtle()
+    d.hideturtle()
     left_pad.hideturtle()
     right_pad.hideturtle()
     hit_ball.hideturtle()
