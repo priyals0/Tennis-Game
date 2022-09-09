@@ -182,16 +182,7 @@ def firework3():
 
 #function for when a player wins
 def celebration(num):
-    x.hideturtle()
-    y.hideturtle()
-    z.hideturtle()
-    a.hideturtle()
-    b.hideturtle()
-    c.hideturtle()
-    d.hideturtle()
-    left_pad.hideturtle()
-    right_pad.hideturtle()
-    hit_ball.hideturtle()
+    sc.clear()
     win = turtle.Screen()
     win.title("Win Screen")
     win.bgcolor("thistle")
@@ -199,9 +190,9 @@ def celebration(num):
     sketch.clear()
     sketch.goto(0, 0)
     if(num==1):
-        sketch.write(playerR + " wins!!!", align="center", font=("Garamond", 50, "normal"))
+        sketch.write(playerR + " wins!!!", align="center", font=("Garamond", 100, "normal"))
     else:
-         sketch.write(playerL + " wins!!!", align="center", font=("Garamond", 50, "normal"))
+         sketch.write(playerL + " wins!!!", align="center", font=("Garamond", 100, "normal"))
     playsound("TheMedvedevSpeech .mp3")
     firework3()
 
