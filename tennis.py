@@ -59,6 +59,7 @@ d.shape("square")
 d.shapesize(stretch_wid=5, stretch_len=10)
 d.penup()
 d.goto(-100,50)
+#this is to make the net
 b = turtle.Turtle()
 b.speed(0)
 b.color("white")
@@ -68,24 +69,28 @@ b.penup()
 b.goto(0,0)
 
 
+
 #left paddle
+image = ("racket3.gif")
+sc2 = turtle.Screen()
+sc2.addshape(image)
 left_pad = turtle.Turtle()
 left_pad.speed(10)
-left_pad.shape("circle")
+left_pad.shape(image)
 left_pad.color("white", "blue")
-left_pad.shapesize(stretch_wid=6, stretch_len=2)
+#left_pad.shapesize(stretch_wid=0.01, stretch_len=0.01)
 left_pad.penup()
-left_pad.goto(-400, 0)
+left_pad.goto(-425, 0)
 
 
 #right paddle
 right_pad = turtle.Turtle()
 right_pad.speed(10)
-right_pad.shape("circle")
+right_pad.shape(image)
 right_pad.color("blue", "white")
-right_pad.shapesize(stretch_wid=6, stretch_len=2)
+#right_pad.shapesize(stretch_wid=6, stretch_len=2)
 right_pad.penup()
-right_pad.goto(400, 0)
+right_pad.goto(425, 0)
 
 
 #ball
@@ -197,7 +202,7 @@ def celebration(num):
         sketch.write(playerR + " wins!!!", align="center", font=("Garamond", 50, "normal"))
     else:
          sketch.write(playerL + " wins!!!", align="center", font=("Garamond", 50, "normal"))
-    playsound("MedvedevSpeech.mp3")
+    playsound("TheMedvedevSpeech .mp3")
     firework3()
 
 #making the game run!  
@@ -263,12 +268,12 @@ while True:
         sketch.write(playerL + ": " + str(left_player) + " "  + playerR + ": " + str(right_player), align="center", font=("Garamond", 24, "normal"))
 
     #when ball hits paddle...
-    if (hit_ball.xcor() > 360 and hit_ball.xcor() < 370) and (hit_ball.ycor() < right_pad.ycor()+60 and hit_ball.ycor() > right_pad.ycor()-60):
+    if (hit_ball.xcor() > 390 and hit_ball.xcor() < 400) and (hit_ball.ycor() < right_pad.ycor()+100 and hit_ball.ycor() > right_pad.ycor()-100):
             hit_ball.setx(360)
             hit_ball.dx*=-1
             playsound("bounce.mp3")
             
-    if (hit_ball.xcor()<-360 and hit_ball.xcor()>-370) and (hit_ball.ycor()<left_pad.ycor()+60 and hit_ball.ycor()>left_pad.ycor()-60):
+    if (hit_ball.xcor()<-390 and hit_ball.xcor()>-400) and (hit_ball.ycor()<left_pad.ycor()+100 and hit_ball.ycor()>left_pad.ycor()-100):
             hit_ball.setx(-360)
             hit_ball.dx*=-1
             playsound("bounce.mp3")
