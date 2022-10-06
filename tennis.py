@@ -3,13 +3,23 @@ import turtle
 import random
 from playsound import playsound
 
-#this is to generate random tennis player names for the left and right players 
-players = ["Medvedev", "Tashjian", "Marfeo", "Nadal", "Alcaraz", "Shelton", "Ruud", "Norrie", "Hurkacz", "Rublev", "Fritz", "Kyrgios", "Kokkinakis", "Tiafoe", "Swiatek", "Sakkari", "Jabeur", "Sabalenka", "Pegula", "Fernandez", "Sinner", "Gauff", "Nakashima", "Keys"]
-playerL = players[random.randint(0, len(players)-1)]
-playerR = players[random.randint(0, len(players)-1)]
+#this is to generate random tennis player names for the left and right players OR to let players choose
+print("randomly choose tennis players or enter names")
+print("\t a) randomly choose")
+print("\t b) enter")
+choice = str(input())
 
-while(playerL == playerR): #making sure the players aren't the same
+if choice == 'a':
+#this is to generate random tennis player names for the left and right players 
+    players = ["Medvedev", "Tashjian", "Marfeo", "Nadal", "Alcaraz", "Shelton", "Ruud", "Norrie", "Hurkacz", "Rublev", "Fritz", "Kyrgios", "Kokkinakis", "Tiafoe", "Swiatek", "Sakkari", "Jabeur", "Sabalenka", "Pegula", "Fernandez", "Sinner", "Gauff", "Nakashima", "Keys"]
+    playerL = players[random.randint(0, len(players)-1)]
     playerR = players[random.randint(0, len(players)-1)]
+
+    while(playerL == playerR): #making sure the players aren't the same
+        playerR = players[random.randint(0, len(players)-1)]
+else:
+    playerL = str(input("Enter player 1: "))
+    playerR = str(input("Enter player 2: "))
                      
 #background
 sc = turtle.Screen()
